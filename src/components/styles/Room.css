@@ -1,0 +1,43 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+}
+
+/* .section{
+    display: flex;
+    flex-direction: column;
+    margin-left: 70px;
+} */
+
+.room-name{
+    margin-top: 30px;
+    font-weight: 100;
+    font-size: 55px;
+    color: black;
+}
+
+.stats_section{
+    display: flex;
+    flex-direction: row;
+}
+
+.pie{
+    width: 500px;
+}
+
+.task-wrapper{
+    width: 1000px;
+    margin-top: 50px;
+    /* margin-left: 200px; */
+    padding: 40px;
+    /* background-color: rgb(207, 175, 239); */
+    border-radius: 25px;
+}
