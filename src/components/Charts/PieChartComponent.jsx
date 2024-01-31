@@ -12,20 +12,20 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 export default class PieChartComponent extends PureComponent {
 
   render() {
-  
+
     return (
-      <div className='flex flex-row bg-white mt-5'>
+      <div className='flex flex-row bg-white items-center justify-center'>
         <div>
-          <PieChart width={300} height={300} >
+          <PieChart width={250} height={250} >
             <Tooltip
               contentStyle={{ backgroundColor: 'white', color: 'black', borderRadius: '5px' }}
             />
             <Pie
               data={data}
               cx={120}
-              cy={150}
+              cy={120}
               innerRadius={60}
-              outerRadius={90}
+              outerRadius={80}
               fill="#8884d8"
               paddingAngle={5}
               dataKey="value"
@@ -36,13 +36,13 @@ export default class PieChartComponent extends PureComponent {
             </Pie>
           </PieChart>
         </div>
-  
+
         <div className='flex flex-col justify-center p-5'>
           {data.map(item => (
             <div className='flex' key={item.name}>
               <div className='flex flex-row mt-2'>
                 <div className="w-5 h-5 rounded-full" style={{ backgroundColor: item.color }}></div>
-                <div className='ml-3'>{item.name}</div>
+                <div className='ml-2'>{item.name}</div>
               </div>
             </div>
           ))}
@@ -50,5 +50,4 @@ export default class PieChartComponent extends PureComponent {
       </div>
     );
   }
-  
 }

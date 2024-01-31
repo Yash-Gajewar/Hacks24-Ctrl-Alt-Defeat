@@ -17,7 +17,7 @@ const dummyUrls = [
     // Add more URLs as needed
 ];
 
-const Home = () => {
+const ContractorRoom = () => {
     return (
 
         <div className='flex flex-col'>
@@ -31,7 +31,7 @@ const Home = () => {
                 <div className='flex flex-col'>
 
                     <div className='ml-24 mt-10 font-sans text-2xl'>
-                        Dashboard
+                        Kitchen
                     </div>
 
 
@@ -76,30 +76,7 @@ const Home = () => {
                     </div>
 
                     <div className='flex flex-row justify-between'>
-                        <div className='flex flex-col mt-10 ml-10 w-full'>
-                            <LinearWithValueLabel title={"Kitchen"} value={"10"} />
-                            <LinearWithValueLabel title={"Drawing Room"} value={"25"} />
-                            <LinearWithValueLabel title={"Bathroom"} value={"58"} />
-                            <LinearWithValueLabel title={"Bedroom 1"} value={"80"} />
-                            <LinearWithValueLabel title={"Bedroom 2"} value={"90"} />
-
-                        </div>
-
-                        <div>
-                            <div className='ml-10 mt-10 font-sans text-2xl justify-center items-center'>
-                                Documents
-                            </div>
-
-                            <ul className='list-disc ml-10'>
-                                {dummyUrls.map((url, index) => (
-                                    <li key={index}>
-                                        <a href={url} target="_blank" rel="noopener noreferrer" className='text-blue-500 hover:underline'>
-                                        {`Link ${index + 1}`}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        
 
                         <div>
 
@@ -119,4 +96,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default ContractorRoom
