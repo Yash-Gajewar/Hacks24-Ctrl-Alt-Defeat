@@ -6,7 +6,8 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import UserRoom from "./components/UserRoom";
 import ContractorRoom from "./components/ContractorRoom";
-import Shop from "./components/shop/Shop";
+// import Shop from "./components/shop/Shop";
+import GetStarted from "./components/GetStarted";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/" element={<ContractorRoom />} />
-        <Route exact path="/test" element={<Shop />} />
+        <Route exact path="/test" element={<GetStarted />} />
       </Routes>
     </>
   );
