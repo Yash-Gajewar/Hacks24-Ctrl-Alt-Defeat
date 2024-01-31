@@ -14,7 +14,10 @@ import {
 export default function UserSidebar() {
   return (
     <div>
-      <Sidebar className="h-screen" aria-label="Sidebar with logo branding example">
+      <Sidebar
+        className="h-screen"
+        aria-label="Sidebar with logo branding example"
+      >
         <Sidebar.Logo href="#" img="/favicon.svg" imgAlt="logo">
           My Profile
         </Sidebar.Logo>
