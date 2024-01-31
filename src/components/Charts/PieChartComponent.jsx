@@ -6,56 +6,59 @@ const data = [
   { name: 'Done', value: 30, color: '#00C49F' },
   { name: 'In Progress', value: 30, color: '#FFBB28' },
 ];
+
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28'];
 
 export default class PieChartComponent extends PureComponent {
 
   render() {
+  
     return (
 
-      <div className='flex flex-row'>
+        <div className='flex flex-row'>
 
-        <div>
-          <PieChart width={300} height={300} >
-            <Tooltip
-              contentStyle={{ backgroundColor: 'white', color: 'black', borderRadius: '5px' }}
-            />
-            <Pie
-              data={data}
-              cx={120}
-              cy={150}
-              innerRadius={60}
-              outerRadius={90}
-              fill="#8884d8"
-              paddingAngle={5}
-              dataKey="value"
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
-          </PieChart>
+          <div>
+            <PieChart width={300} height={300} >
+              <Tooltip
+                contentStyle={{ backgroundColor: 'white', color: 'black', borderRadius: '5px' }}
+              />
+              <Pie
+                data={data}
+                cx={120}
+                cy={150}
+                innerRadius={60}
+                outerRadius={90}
+                fill="#8884d8"
+                paddingAngle={5}
+                dataKey="value"
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+            </PieChart>
 
-        </div>
+          </div>
 
-        <div className='flex flex-col justify-center'>
+          <div className='flex flex-col justify-center'>
 
-          {
-            data.map(item => (
-              <div className='flex' key={item.name}>
-                <div className='flex flex-row mt-2'>
-                  <div className="w-5 h-5 rounded-full" style={{ backgroundColor: item.color }}></div>
-                  <div className='ml-3'>{item.name}</div>
+            {
+              data.map(item => (
+                <div className='flex' key={item.name}>
+                    <div className='flex flex-row mt-2'>
+                      <div className="w-5 h-5 rounded-full" style={{ backgroundColor: item.color }}></div>
+                      <div className='ml-3'>{item.name}</div>
+                    </div>
                 </div>
-              </div>
-            ))
+              ))
 
-          }
+            }
+
+          </div>
 
         </div>
-
-      </div>
 
     );
   }
+  
 }
