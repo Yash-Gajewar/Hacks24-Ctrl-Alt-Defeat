@@ -13,6 +13,7 @@ export default function ContracterSidebar() {
     <div>
       <Sidebar
         className="h-screen"
+        style={{position: 'sticky', top: 0}}
         aria-label="Sidebar with logo branding example"
       >
         <Sidebar.Logo href="#" img="/favicon.svg" imgAlt="logo">
