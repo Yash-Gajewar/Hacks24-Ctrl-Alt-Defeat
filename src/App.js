@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // import { Sidebar } from 'react-pro-sidebar';
 import Sidebar from "../src/components/ContracterSidebar";
 import Families from "./components/Families";

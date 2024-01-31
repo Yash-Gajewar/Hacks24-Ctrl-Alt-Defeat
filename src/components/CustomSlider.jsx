@@ -10,7 +10,7 @@ const CustomSlider = ({ task, taskCompleted }) => {
             <Container>
                 <Col>
                 <div className='header'> <InsertPhotoRoundedIcon /> <Typography variant='h6'> {task} </Typography> </div>
-                        <Slider sx={{ width: 700, height: 10, color: 'black', }}
+                        <Slider sx={{ width: 400, height: 5, color: 'black', }}
                             aria-label="Always visible"
                             defaultValue={taskCompleted}
                             step={5}

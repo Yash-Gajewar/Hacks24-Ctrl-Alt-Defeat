@@ -53,6 +53,7 @@ const Register = () => {
     Cookie.set("token", data.token, { expires: 7 });
     if (response.status === 201) {
       toast.success("Registration successful");
+      navigate("/home");
     } else {
       toast.error(data.message);
     }

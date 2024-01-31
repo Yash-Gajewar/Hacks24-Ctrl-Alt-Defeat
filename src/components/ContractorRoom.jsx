@@ -32,36 +32,28 @@ const ContractorRoom = () => {
                     <UserSidebar />
                 </div>
 
-                <div className='flex flex-col'>
+                <div className='flex flex-col ml-24'>
                     <div className='ml-24 mt-10 font-sans text-2xl'>Kitchen</div>
 
-                    <div className='flex justify-between'>
-                        <div className='font-sans text-2xl'></div>
+                    <div className="grid justify-between">
+                        <div className="font-sans text-2xl"></div>
                         {/* pie chart and amount paid section */}
-                        <div className='flex flex-row items-center justify-center ml-24'>
-                            <div>
+                        <div className="grid grid-cols-2 gap-20 mt-2 ">
+                            <div className="cols-span-1 bg-slate-100 p-1 rounded">
                                 {/* pie chart */}
-                                <div className='flex flex-col items-center'>
-                                    <div>
-                                        <PieChartComponent />
-                                    </div>
-
-                                    <div>Work</div>
+                                <div className="flex flex-col items-center">
+                                    <h4>Work</h4>
+                                    <PieChartComponent />
                                 </div>
                             </div>
-                            <div className='ml-24'>
+                            <div className="cols-span-1 bg-slate-100 p-1 rounded">
                                 {/* pie chart */}
-                                <div className='flex flex-col items-center'>
-                                    <div>
-                                        <PieChartComponent />
-                                    </div>
-
-                                    <div>Amount</div>
+                                <div className="flex flex-col items-center">
+                                    <h4>Amount</h4>
+                                    <PieChartComponent />
                                 </div>
                             </div>
                         </div>
-
-                        {/* Rooms and their status and pdf documents */}
                     </div>
 
                     <div className='flex flex-col mt-5 ml-5'>
@@ -69,7 +61,7 @@ const ContractorRoom = () => {
                             {taskList.map((task, index) => (
                                 <div
                                     key={index}
-                                    className='flex pt-3 pb-3 pl-2 pr-2 mt-5 justify-center item-center hover:shadow-md'
+                                    className='flex justify-center gap-10 item-center'
                                 >
                                     <CustomSlider task={task} taskCompleted={0} />
                                 </div>
@@ -81,7 +73,7 @@ const ContractorRoom = () => {
                                 type="text"
                                 placeholder="Task"
                                 onChange={(e) => setTask(e.target.value)}
-                                onBlur={() => {setTaskList([...taskList, task]); setTask(''); setAddTask(false)}}
+                                onBlur={() => { setTaskList([...taskList, task]); setTask(''); setAddTask(false) }}
                             />
                         ) : (
                             <></>
@@ -103,6 +95,8 @@ const ContractorRoom = () => {
                     </div>
                 </div>
             </div>
+
+
         </div>
     );
 };
