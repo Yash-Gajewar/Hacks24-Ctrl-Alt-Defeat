@@ -17,7 +17,7 @@ const dummyUrls = [
     // Add more URLs as needed
 ];
 
-const ContractorRoom = () => {
+const UserRoom = () => {
     return (
 
         <div className='flex flex-col'>
@@ -31,7 +31,7 @@ const ContractorRoom = () => {
                 <div className='flex flex-col'>
 
                     <div className='ml-24 mt-10 font-sans text-2xl'>
-                        Kitchen
+                        Drawing Room
                     </div>
 
 
@@ -76,7 +76,14 @@ const ContractorRoom = () => {
                     </div>
 
                     <div className='flex flex-row justify-between'>
-                        
+                        <div className='flex flex-col mt-10 ml-10 w-full'>
+                            <LinearWithValueLabel title={"Flooring"} value={"100"} />
+                            <LinearWithValueLabel title={"Painting"} value={"25"} />
+                            <LinearWithValueLabel title={"Plumbing"} value={"58"} />
+                            <LinearWithValueLabel title={"Furniture"} value={"80"} />
+                            <LinearWithValueLabel title={"Trolly"} value={"90"} />
+
+                        </div>
 
                         <div>
 
@@ -92,8 +99,10 @@ const ContractorRoom = () => {
                 </div>
 
             </div>
+
         </div>
+
     )
 }
 
-export default ContractorRoom
+export default UserRoom;
