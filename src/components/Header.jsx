@@ -20,7 +20,7 @@ const Header = () => {
                             ></path>
                         </svg>
                     </NavLink>
-                    <NavLink to='/'><span className="font-bold">NoteVault</span></NavLink>
+                    <NavLink to='/'><span className="font-bold">Harmonizing Homes</span></NavLink>
                 </div>
                 <div className="hidden lg:block">
                     <ul className="ml-12 inline-flex space-x-8">
@@ -29,7 +29,7 @@ const Header = () => {
                                 href="/register"
                                 className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
                             >
-                                Home
+                                Register
                             </a>
                         </li>
                         <li>
@@ -37,7 +37,7 @@ const Header = () => {
                                 href="/login"
                                 className="inline-flex items-center text-sm font-semibold text-gray-800 hover:text-gray-900"
                             >
-                                Contact
+                                Login
                                 <span>
                                 </span>
                             </a>
