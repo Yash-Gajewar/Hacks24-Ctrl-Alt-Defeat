@@ -1,7 +1,11 @@
 import './App.css';
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import { Login, Register, Room, Home } from './components';
+import Login from './components/Login';
+import Register from './components/Register';
+import { Home, Room } from './components';
+
+
 
 function App() {
   return (

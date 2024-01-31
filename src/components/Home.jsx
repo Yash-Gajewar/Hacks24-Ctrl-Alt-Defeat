@@ -1,11 +1,10 @@
 import React from 'react'
 import Header from './Header'
 import PieChartComponent from './Charts/PieChartComponent'
-
+import Sidebar from "./UserSidebar"
 
 const totalAmount = 5000000;
 const amountPaid = 200000;
-
 
 const Home = () => {
     return (
@@ -13,11 +12,12 @@ const Home = () => {
         <div className='flex flex-col'>
             <Header />
 
-
             <div className='flex flex-row'>
+            <div>
+                <Sidebar/>
+            </div>
 
-
-                <div className='flex justify-between ml-24'>
+                <div className='flex justify-between'>
 
                     <div className='font-sans text-2xl ml-10 mt-5'>
                     Dashboard

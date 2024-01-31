@@ -74,8 +74,7 @@ const Login = () => {
 
     return (
 
-        
-        <>
+        // <div>
 
         <div className='flex flex-col'>
 
@@ -155,13 +154,11 @@ const Login = () => {
                 </div>
 
             </div>
+            {/* Checking for comments */}
 
             <ToastContainer />
 
-            </div>
-
-
-        </>
+        </div> 
 
 
 
