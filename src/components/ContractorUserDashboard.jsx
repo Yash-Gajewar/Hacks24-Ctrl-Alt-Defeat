@@ -18,7 +18,7 @@ const dummyUrls = [
     // Add more URLs as needed
 ];
 
-const ContractorRoom = () => {
+const ContractorUserDashboard = () => {
     const [addTask, setAddTask] = React.useState(false);
     const [task, setTask] = React.useState('');
     const [taskList, setTaskList] = React.useState([]);
@@ -100,4 +100,4 @@ const ContractorRoom = () => {
     );
 };
 
-export default ContractorRoom;
+export default ContractorUserDashboard;

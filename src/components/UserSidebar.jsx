@@ -10,6 +10,7 @@ import {
   HiUser,
   HiViewBoards,
 } from "react-icons/hi";
+import tsec_logo from "../assets/tsec_logo.avif";
 
 export default function UserSidebar() {
   return (
@@ -18,7 +19,7 @@ export default function UserSidebar() {
         className="h-screen"
         aria-label="Sidebar with logo branding example"
       >
-        <Sidebar.Logo href="#" img="/favicon.svg" imgAlt="logo">
+        <Sidebar.Logo href="#" img={tsec_logo} imgAlt="logo">
           My Profile
         </Sidebar.Logo>
         <Sidebar.Items>

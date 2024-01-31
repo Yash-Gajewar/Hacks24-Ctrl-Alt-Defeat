@@ -17,6 +17,8 @@ const Login = () => {
   const [cookie] = useState(Cookie.get("token"));
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
     if (cookie) {
       return navigate("/home");
@@ -40,9 +42,22 @@ const Login = () => {
     });
     const data = await response.json();
     Cookie.set("token", data.token, { expires: 7 });
+    Cookie.set("id", data.data.user._id, { expires: 7 });
+    // localStorage.setItem('role', response.data.data.user.role);
+    console.log(data.data.user.role);
+
     if (response.status === 200) {
       toast.success("Registration successful");
-      navigate("/home");
+
+      console.log(data);
+      if(data.data.user.role === "CONTRACTOR"){
+        navigate("/families");
+      }
+      else{
+        navigate("/home");
+      }
+
+      
     } else {
       toast.error(data.message);
     }
@@ -63,8 +78,7 @@ const Login = () => {
 
   return (
     <>
-      <div className="flex flex-col">
-        <Header />
+     
 
         <div>
           <div className="mx-auto max-w-7xl px-4">
@@ -145,7 +159,6 @@ const Login = () => {
         </div>
 
         <ToastContainer />
-      </div>
     </>
   );
 };

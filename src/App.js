@@ -11,6 +11,8 @@ import Families from "./components/Families";
 import Shop from "./components/shop/Shop";
 import UserRoom from "./components/UserRoom";
 import ContractorRoom from "./components/ContractorRoom";
+import Contractors from "./components/Contractors";
+import ContractorUserDashboard from "./components/ContractorUserDashboard";
 
 function App() {
   return (
@@ -24,6 +26,9 @@ function App() {
         <Route exact path="/amazon-products" element={<Shop />}></Route>
         <Route exact path="/userroom" element={<UserRoom />} />
         <Route exact path="/" element={<ContractorRoom />} />
+        <Route exact path="/families" element={<Families />} />
+        <Route exact path="/contractors" element={<Contractors />} />
+        <Route exact path="/contractor-user-dashboard" element={<ContractorUserDashboard />} />
       </Routes>
     </>
   );

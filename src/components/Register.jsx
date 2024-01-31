@@ -51,6 +51,8 @@ const Register = () => {
     });
     const data = await response.json();
     Cookie.set("token", data.token, { expires: 7 });
+    Cookie.set("id", data.data.user._id, { expires: 7 });
+    console.log(data)
     if (response.status === 201) {
       toast.success("Registration successful");
       navigate("/home");
