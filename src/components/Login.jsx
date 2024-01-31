@@ -9,8 +9,10 @@ import Header from "./Header";
 import Cookie from "js-cookie";
 // import axios from "axios";
 
+const BACKEND_URL = "https://tsec-backend.onrender.com";
+
 const Login = () => {
-  const [familyId, setFamilyId] = useState("");
+  const [Id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [cookie] = useState(Cookie.get("token"));
   const navigate = useNavigate();
@@ -21,44 +23,29 @@ const Login = () => {
     }
   });
 
-  const handleLogin = () => {
-    if (familyId === "Yash" && password === "12345") {
-      toast.success("Success");
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
-    } else {
-      toast.error("Invalid Credentials");
+  const handleLogin = async () => {
+    if (Id === "" || password === "") {
+      toast.error("Please fill all fields");
     }
 
-    // Replace with your actual backend API endpoint URL
-    // const apiUrl = 'http://localhost:8000/api/login/';
-
-    // // Create a payload with the login details
-    // const payload = {
-    //     username: username,
-    //     password: password,
-    // };
-
-    // fetch(apiUrl, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(payload),
-    // })
-    //     .then((response) => {
-    //         if (response.ok) {
-    //             // Successful login, you can redirect the user or perform other actions here
-
-    //         } else {
-    //             // Handle login errors here
-    //             console.error('Login failed');
-    //         }
-    //     })
-    //     .catch((error) => {
-    //         console.error('Error:', error);
-    //     });
+    const response = await fetch(`${BACKEND_URL}/api/v1/users/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: Id,
+        password: password,
+      }),
+    });
+    const data = await response.json();
+    Cookie.set("token", data.token, { expires: 7 });
+    if (response.status === 200) {
+      toast.success("Registration successful");
+      navigate("/home");
+    } else {
+      toast.error(data.message);
+    }
   };
 
   // const handleLogin = async () => {
@@ -103,9 +90,9 @@ const Login = () => {
                           className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-700 dark:text-gray-50 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900"
                           type="text"
                           id="family_id"
-                          value={familyId}
+                          value={Id}
                           placeholder="Family ID"
-                          onChange={(e) => setFamilyId(e.target.value)}
+                          onChange={(e) => setId(e.target.value)}
                         />
                       </div>
 
