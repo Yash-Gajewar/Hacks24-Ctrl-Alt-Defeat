@@ -70,7 +70,7 @@ const CustomSlider = ({ task, taskCompleted }) => {
                             <Image src={kitchen}></Image>
                         </CardActionArea>
                     </Card>
-                    <Card sx={{ maxWidth: 280 }}>
+                     <Card sx={{ maxWidth: 280 }}>
                         <CardActionArea>
                             <Image src={kitchen}></Image>
                         </CardActionArea>
