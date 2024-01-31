@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { GlobalStyle } from "../Styles/globalStyles";
 import GetStartedBtn from "./getStartedBtn";
 import { auto } from "@popperjs/core";
-
-
-
+import plus from '../assets/plus.jpg'
 
 const initialValues = {
   name: "",
@@ -15,8 +13,8 @@ const initialValues = {
 };
 
 const GetStarted = () => {
-   // State for form values
-   const [values, setValues] = useState({
+  // State for form values
+  const [values, setValues] = useState({
     name: "",
     email: "",
     password: "",
@@ -75,50 +73,89 @@ const GetStarted = () => {
 
     console.log("Form Submitted:", values);
   };
+  const [addTask, setAddTask] = React.useState(false);
+  const [task, setTask] = React.useState("");
+  const [taskList, setTaskList] = React.useState([]);
 
   return (
     <>
       <GlobalStyle />
       <Wrapper>
-      <div className="container">
-        <div className="modal">
-          <div className="modal-container">
-            <div className="modal-left">
-              <h1 className="modal-title">Welcome!</h1>
-              <p className="modal-desc">
-                Lets get started with building your house :)
-              </p>
-              <form onSubmit={handleSubmit}>
-                
-               <GetStartedBtn title="Wall Colours"></GetStartedBtn>
-               <GetStartedBtn title="Flooring"></GetStartedBtn>
-               <GetStartedBtn title="Furniture"></GetStartedBtn>
-               <GetStartedBtn title="Lighting"></GetStartedBtn>
-               <GetStartedBtn title="Window Treatements"></GetStartedBtn>
-               
-              
-              
-
-                <div className="modal-buttons">
-                  {/* <a href="#" className="">
+        <div className="container">
+          <div className="modal">
+            <div className="modal-container">
+              <div className="modal-left">
+                <h1 className="modal-title">Welcome!</h1>
+                <p className="modal-desc">
+                  Lets get started with building your house :)
+                </p>
+                <form onSubmit={handleSubmit}>
+                  <GetStartedBtn title="Wall Colours"></GetStartedBtn>
+                  <GetStartedBtn title="Flooring"></GetStartedBtn>
+                  <GetStartedBtn title="Furniture"></GetStartedBtn>
+                  <GetStartedBtn title="Lighting"></GetStartedBtn>
+                  <GetStartedBtn title="Window Treatements"></GetStartedBtn>
+                  <div className="flex flex-col">
+                    {/* <div className="grid grid-cols-2 gap-4"> */}
+                      {taskList.map((task, index) => (
+                        <div
+                          key={index}
+                          className="flex justify-center gap-20 item-center"
+                        >
+                          <GetStartedBtn title={task}></GetStartedBtn>
+                        </div>
+                      ))}
+                    {/* </div> */}
+                    {addTask ? (
+                      <input
+                        className="flex h-20 w-full rounded-md border border-gray-300"
+                        type="text"
+                        placeholder="Add some new task"
+                        onChange={(e) => setTask(e.target.value)}
+                        onBlur={() => {
+                          setTaskList([...taskList, task]);
+                          setTask("");
+                          setAddTask(false);
+                        }}
+                      />
+                    ) : (
+                      <></>
+                    )}
+                    <div
+                      className="flex w-full pt-3 pb-3 pl-2 pr-2 justify-center item-center hover:shadow-md"
+                      onClick={() => setAddTask(true)}
+                      onBlur={() => setAddTask(false)}
+                    >
+                      <img
+                        src={plus}
+                        alt="Add task"
+                        style={{
+                          width: "25px",
+                        }}
+                      />
+                    </div>
+                              
+                  </div>
+                  <div className="modal-buttons">
+                    {/* <a href="#" className="">
                     Want to register using Gmail?
                   </a> */}
-                  <button className="input-button" type="submit">
-                    Save
-                  </button>
-                </div>
-              </form>
-            </div>
-            <div className="modal-right">
-              <img
-                src="https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
+                    <button className="input-button" type="submit">
+                      Save
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div className="modal-right">
+                <img
+                  src="https://images.unsplash.com/photo-1513161455079-7dc1de15ef3e?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Wrapper>
+      </Wrapper>
     </>
   );
 };
