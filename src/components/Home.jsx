@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import Sidebar from './Sidebar'
 import PieChartComponent from './Charts/PieChartComponent'
 import UserSidebar from './UserSidebar'
 import LinearWithValueLabel from './LinearWithValueLabel'
@@ -116,9 +115,7 @@ const Home = () => {
                 </div>
 
             </div>
-
         </div>
-
     )
 }
 
