@@ -17,7 +17,7 @@ const BorderLinearProgress = withStyles((theme) => ({
     },
     bar: {
         borderRadius: 10, // Make borders rounded
-        backgroundColor: "#4CAF50", // Change color to green
+        backgroundColor: "#FFBB28", // Change color to green
         marginBottom: 0, // Remove bottom spacing
     },
 }))(LinearProgress);
@@ -29,8 +29,9 @@ const useStyles = makeStyles({
     title: {
         display: "flex", // Add flex display
         justifyContent: "space-between", // Align items with space between
-        marginTop: 7,
-        color: "black", // Change color to black
+        marginTop: '20px',
+        fontSize: '20px',
+        color: "white", // Change color to black
     },
     percentage: {
         marginLeft: 8,

@@ -14,7 +14,7 @@ export default class PieChartComponent extends PureComponent {
   render() {
 
     return (
-      <div className='flex flex-row bg-white items-center justify-center'>
+      <div className='flex flex-row bg-slate-800 items-center justify-center pie-chart'>
         <div>
           <PieChart width={250} height={250} >
             <Tooltip
@@ -42,7 +42,7 @@ export default class PieChartComponent extends PureComponent {
             <div className='flex' key={item.name}>
               <div className='flex flex-row mt-2'>
                 <div className="w-5 h-5 rounded-full" style={{ backgroundColor: item.color }}></div>
-                <div className='ml-2'>{item.name}</div>
+                <div className='ml-2 text-white'>{item.name}</div>
               </div>
             </div>
           ))}
