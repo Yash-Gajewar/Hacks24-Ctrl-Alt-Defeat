@@ -78,11 +78,10 @@ const Login = () => {
 
   return (
     <>
-     
-
+      <div style={{ height: '100vh' }} className="flex flex-col">
         <div>
           <div className="mx-auto max-w-7xl px-4">
-            <div className="mx-auto max-w-5xl  py-12 md:py-24">
+            <div className="mx-auto max-w-5xl  py-12 md:py-24 ">
               <div className="w-full flex flex-row justify-center align-middle text-center text-2xl font-bold text-gray-900 md:text-4xl">
                 Harmonizing Homes
               </div>
@@ -159,8 +158,9 @@ const Login = () => {
         </div>
 
         <ToastContainer />
+      </div>
     </>
   );
-};
+}
 
 export default Login;

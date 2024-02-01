@@ -3,13 +3,21 @@ import { debounce } from "lodash";
 import { PRODUCTS } from "../../products";
 import { Product } from "./product";
 import "./shop.css";
-import UserSidebar from "../UserSidebar";
+
+
+
+
+const API_URL = "https://tsec-backend.onrender.com/api/v1/amazon/products";
+
+
+
 
 export const Shop = () => {
   const [name, setName] = useState("");
   const [products, setProducts] = React.useState([]);
 
-  const API_URL = "https://fakestoreapi.com/products";
+
+
 
   useEffect(() => {
     async function fetchProducts() {
@@ -23,27 +31,50 @@ export const Shop = () => {
       fetchProducts();
     }, 1500);
 
+
+
+
     return () => clearTimeout(timer);
   }, [name]);
 
-  return (
-    <div className="flex">
-      <div className="fixed top-0 left-0 h-screen">
-        <UserSidebar />
-      </div>
-      <div className="ml-64 p-8"> {/* Adjust the margin left based on your sidebar width */}
-        <div className="shopTitle">
-          <h1>PedroTech Shop</h1>
-        </div>
 
-        <div className="products">
-          {PRODUCTS.map((product) => (
-            <Product key={product.id} data={product} />
-          ))}
-        </div>
+
+
+  return (
+    <div className="shop">
+      <div className="shopTitle">
+        <h1>Shop from Amazon</h1>
+      </div>
+
+
+
+
+      <input
+        type="search"
+        placeholder="Search..."
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+
+
+
+      <div className="products">
+        {products.map((product) => (
+          <Product
+            id={product.asin}
+            name={product.product_title}
+            price={product.product_price}
+            photo={product.product_photo}
+            url={product.product_url}
+          />
+        ))}
       </div>
     </div>
   );
 };
+
+
+
 
 export default Shop;

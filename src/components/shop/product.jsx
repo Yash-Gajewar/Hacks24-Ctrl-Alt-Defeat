@@ -12,7 +12,7 @@ export const Product = (props) => {
       <img src={photo} alt="" />
       <div className="description">
         <p>
-          <b>{name.split("|")[0]}</b>
+          <b>{name}</b>
         </p>
         <p> ${price}</p>
       </div>

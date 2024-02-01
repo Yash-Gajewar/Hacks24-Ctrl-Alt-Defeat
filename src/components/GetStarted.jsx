@@ -4,6 +4,8 @@ import { GlobalStyle } from "../Styles/globalStyles";
 import GetStartedBtn from "./getStartedBtn";
 import { auto } from "@popperjs/core";
 import plus from '../assets/plus.jpg'
+import Cookie from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -13,6 +15,8 @@ const initialValues = {
 };
 
 const GetStarted = () => {
+
+  const navigate = useNavigate();
   // State for form values
   const [values, setValues] = useState({
     name: "",
@@ -38,44 +42,66 @@ const GetStarted = () => {
   });
 
   // Function to handle form value changes
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
 
-    setValues({
-      ...values,
-      [name]: value,
-    });
+  //   setValues({
+  //     ...values,
+  //     [name]: value,
+  //   });
 
-    setTouched({
-      ...touched,
-      [name]: true,
-    });
-  };
+  //   setTouched({
+  //     ...touched,
+  //     [name]: true,
+  //   });
+  // };
 
   // Function to handle form field blur
-  const handleBlur = (e) => {
-    const { name } = e.target;
+  // const handleBlur = (e) => {
+  //   const { name } = e.target;
 
-    // Validate the field on blur
-    // Implement your validation logic here and update the errors state
-    // Example: validateName(values.name);
-    // Update errors state accordingly
-  };
+  //   // Validate the field on blur
+  //   // Implement your validation logic here and update the errors state
+  //   // Example: validateName(values.name);
+  //   // Update errors state accordingly
+  // };
 
   // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    // Implement your form submission logic here
-    // You can access form values from the 'values' state
+  const BACKEND_URL = "https://tsec-backend.onrender.com";
 
-    // Example: Call an API, dispatch an action, etc.
 
-    console.log("Form Submitted:", values);
+  const handleSubmit = async () => {
+
+    const response = await fetch(`${BACKEND_URL}/api/v1/dashboard`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: Cookie.get("id"),
+        room: {
+          name: name,
+          totalAmount: totalAmount,
+          paidAmount: amountPaid,
+        }
+
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+
+    setTimeout(() => {
+      navigate("/home");
+    }, 1000);
+
   };
   const [addTask, setAddTask] = React.useState(false);
   const [task, setTask] = React.useState("");
   const [taskList, setTaskList] = React.useState([]);
+  const [totalAmount, setTotalAmount] = React.useState(0);
+  const [amountPaid, setAmountPaid] = React.useState(0);
+  const [name, setName] = React.useState("");
 
   return (
     <>
@@ -90,21 +116,20 @@ const GetStarted = () => {
                   Lets get started with building your house :)
                 </p>
                 <form onSubmit={handleSubmit}>
-                  <GetStartedBtn title="Wall Colours"></GetStartedBtn>
-                  <GetStartedBtn title="Flooring"></GetStartedBtn>
-                  <GetStartedBtn title="Furniture"></GetStartedBtn>
-                  <GetStartedBtn title="Total Amount"></GetStartedBtn>
-                  <GetStartedBtn title="AmountPaid"></GetStartedBtn>
+                  <GetStartedBtn title="Wall Colours" ></GetStartedBtn>
+                  <GetStartedBtn title="Name" type="name" setName={setName}></GetStartedBtn>
+                  <GetStartedBtn title="Total Amount" setTotalAmount={setTotalAmount} type="TotalAmt"></GetStartedBtn>
+                  <GetStartedBtn title="Amount Paid" setAmountPaid={setAmountPaid} type="PaidAmt"></GetStartedBtn>
                   <div className="flex flex-col">
                     {/* <div className="grid grid-cols-2 gap-4"> */}
-                      {taskList.map((task, index) => (
-                        <div
-                          key={index}
-                          className="flex justify-center gap-20 item-center"
-                        >
-                          <GetStartedBtn title={task}></GetStartedBtn>
-                        </div>
-                      ))}
+                    {taskList.map((task, index) => (
+                      <div
+                        key={index}
+                        className="flex justify-center gap-20 item-center"
+                      >
+                        <GetStartedBtn title={task}></GetStartedBtn>
+                      </div>
+                    ))}
                     {/* </div> */}
                     {addTask ? (
                       <input
@@ -134,13 +159,13 @@ const GetStarted = () => {
                         }}
                       />
                     </div>
-                              
+
                   </div>
                   <div className="modal-buttons">
                     {/* <a href="#" className="">
                     Want to register using Gmail?
                   </a> */}
-                    <button className="input-button" type="submit">
+                    <button className="input-button" type="button" onClick={handleSubmit}>
                       Save
                     </button>
                   </div>

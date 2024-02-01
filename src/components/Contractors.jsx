@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import Card from './Card';
-import ContracterSidebar from './ContracterSidebar';
 import worker from '../assets/worker.png';
 import Cookie from 'js-cookie';
+import Sidebar from './UserSidebar';
 
 const totalAmount = 5000000;
 const amountPaid = 200000;
@@ -38,7 +38,7 @@ const Contractors = () => {
        
             <div className='flex flex-row'>
                 <div>
-                    <ContracterSidebar />
+                  <Sidebar />
                 </div>
 
                 <div className="ml-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">

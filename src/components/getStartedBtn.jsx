@@ -12,8 +12,9 @@ export default function getStartedBtn(props) {
         name="name"
         id="name"
         placeholder="Enter your answer"
+        
         // value={values.name}
-        // onChange={handleChange}
+        onChange={(e) => props.type === "TotalAmt"?props.setTotalAmount(e.target.value):props.type === "PaidAmt"?props.setAmountPaid(e.target.value):props.type === "name"?props.setName(e.target.value):null}
         // onBlur={handleBlur}
       />
     </div>

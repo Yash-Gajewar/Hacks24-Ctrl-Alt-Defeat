@@ -22,6 +22,17 @@ const ContractorUserDashboard = () => {
     const [addTask, setAddTask] = React.useState(false);
     const [task, setTask] = React.useState('');
     const [taskList, setTaskList] = React.useState([]);
+    const [taskProgress, setTaskProgress] = React.useState({});
+    const [progress, setProgress] = React.useState('');
+
+    React.useEffect(() => {
+        setTaskProgress({
+            ...taskProgress,
+            [task]: progress,
+        });
+
+        console.log(taskProgress);
+    }, [progress]);
 
     return (
         
@@ -32,7 +43,7 @@ const ContractorUserDashboard = () => {
                 </div>
 
                 <div className='flex flex-col ml-24'>
-                    <div className='ml-24 mt-10 font-sans text-2xl'>Kitchen</div>
+                    <div className='ml-24 mt-10 font-sans text-2xl'>Yash.Gajewar11</div>
 
                     <div className="grid justify-between">
                         <div className="font-sans text-2xl"></div>
@@ -55,14 +66,16 @@ const ContractorUserDashboard = () => {
                         </div>
                     </div>
 
+                    <div className='grid grid-cols-2 gap-4'>
+
                     <div className='flex flex-col mt-5 ml-5'>
-                        <div className='grid grid-cols-2 gap-4'>
+                        <div className='grid grid-cols-1 gap-4'>
                             {taskList.map((task, index) => (
                                 <div
                                     key={index}
                                     className='flex justify-center gap-10 item-center'
                                 >
-                                    <CustomSlider task={task} taskCompleted={0} />
+                                    <CustomSlider setProgress={setProgress} task={task} taskCompleted={0} />
                                 </div>
                             ))}
                         </div>
@@ -72,7 +85,7 @@ const ContractorUserDashboard = () => {
                                 type="text"
                                 placeholder="Task"
                                 onChange={(e) => setTask(e.target.value)}
-                                onBlur={() => { setTaskList([...taskList, task]); setTask(''); setAddTask(false) }}
+                                onBlur={() => { setTaskList([...taskList, task]); setAddTask(false) }}
                             />
                         ) : (
                             <></>
@@ -92,6 +105,14 @@ const ContractorUserDashboard = () => {
                         </div>
 
                     </div>
+
+                    <div>
+                        Upload Image
+                    </div>
+
+                    </div>
+
+                    
                 </div>
             </div>
 

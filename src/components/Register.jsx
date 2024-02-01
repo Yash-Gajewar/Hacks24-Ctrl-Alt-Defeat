@@ -55,7 +55,7 @@ const Register = () => {
     console.log(data)
     if (response.status === 201) {
       toast.success("Registration successful");
-      navigate("/home");
+      navigate("/get-started");
     } else {
       toast.error(data.message);
     }
