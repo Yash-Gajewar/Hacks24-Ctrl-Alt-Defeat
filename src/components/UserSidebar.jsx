@@ -15,11 +15,8 @@ import tsec_logo from "../assets/tsec_logo.avif";
 export default function UserSidebar() {
   return (
     <div>
-      <Sidebar
-        className="h-screen"
-        aria-label="Sidebar with logo branding example"
-      >
-        <Sidebar.Logo href="#" img={tsec_logo} imgAlt="logo">
+      <Sidebar className="h-screen sticky top-0" aria-label="Sidebar with logo branding example">
+        <Sidebar.Logo href="#" img="/favicon.svg" imgAlt="logo">
           My Profile
         </Sidebar.Logo>
         <Sidebar.Items>

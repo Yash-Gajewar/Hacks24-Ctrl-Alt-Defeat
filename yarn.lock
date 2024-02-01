@@ -2147,10 +2147,10 @@
     unist-util-visit "^4.0.0"
     vfile "^5.0.0"
 
-"@mui/base@5.0.0-beta.33":
-  version "5.0.0-beta.33"
-  resolved "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.33.tgz"
-  integrity sha512-WcSpoJUw/UYHXpvgtl4HyMar2Ar97illUpqiS/X1gtSBp6sdDW6kB2BJ9OlVQ+Kk/RL2GDp/WHA9sbjAYV35ow==
+"@mui/base@5.0.0-beta.34", "@mui/base@^5.0.0-beta.22":
+  version "5.0.0-beta.34"
+  resolved "https://registry.yarnpkg.com/@mui/base/-/base-5.0.0-beta.34.tgz#44b0f203250a6e3b2d810f37c9720d114182abd0"
+  integrity sha512-e2mbTGTtReD/y5RFwnhkl1Tgl3XwgJhY040IlfkTVaU9f5LWrVhEnpRsYXu3B1CtLrwiWs4cu7aMHV9yRd4jpw==
   dependencies:
     "@babel/runtime" "^7.23.9"
     "@floating-ui/react-dom" "^2.0.8"
@@ -2517,6 +2517,57 @@
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@protobufjs/utf8/-/utf8-1.1.0.tgz#a777360b5b39a1a2e5106f8e858f2fd2d060c570"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
+
+"@react-aria/ssr@^3.5.0":
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/@react-aria/ssr/-/ssr-3.9.1.tgz#a1252fd5ef87eada810dd9dd6751a5e21359d1d2"
+  integrity sha512-NqzkLFP8ZVI4GSorS0AYljC13QW2sc8bDqJOkBvkAt3M8gbcAXJWVRGtZBCRscki9RZF+rNlnPdg0G0jYkhJcg==
+  dependencies:
+    "@swc/helpers" "^0.5.0"
+
+"@react-spring/animated@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/animated/-/animated-9.7.3.tgz#4211b1a6d48da0ff474a125e93c0f460ff816e0f"
+  integrity sha512-5CWeNJt9pNgyvuSzQH+uy2pvTg8Y4/OisoscZIR8/ZNLIOI+CatFBhGZpDGTF/OzdNFsAoGk3wiUYTwoJ0YIvw==
+  dependencies:
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/core@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/core/-/core-9.7.3.tgz#60056bcb397f2c4f371c6c9a5f882db77ae90095"
+  integrity sha512-IqFdPVf3ZOC1Cx7+M0cXf4odNLxDC+n7IN3MDcVCTIOSBfqEcBebSv+vlY5AhM0zw05PDbjKrNmBpzv/AqpjnQ==
+  dependencies:
+    "@react-spring/animated" "~9.7.3"
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/rafz@^9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/rafz/-/rafz-9.7.3.tgz#d6a9695c581f58a49e047ff7ed5646e0b681396c"
+  integrity sha512-9vzW1zJPcC4nS3aCV+GgcsK/WLaB520Iyvm55ARHfM5AuyBqycjvh1wbmWmgCyJuX4VPoWigzemq1CaaeRSHhQ==
+
+"@react-spring/shared@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/shared/-/shared-9.7.3.tgz#4cf29797847c689912aec4e62e34c99a4d5d9e53"
+  integrity sha512-NEopD+9S5xYyQ0pGtioacLhL2luflh6HACSSDUZOwLHoxA5eku1UPuqcJqjwSD6luKjjLfiLOspxo43FUHKKSA==
+  dependencies:
+    "@react-spring/types" "~9.7.3"
+
+"@react-spring/types@~9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/types/-/types-9.7.3.tgz#ea78fd447cbc2612c1f5d55852e3c331e8172a0b"
+  integrity sha512-Kpx/fQ/ZFX31OtlqVEFfgaD1ACzul4NksrvIgYfIFq9JpDHFwQkMVZ10tbo0FU/grje4rcL4EIrjekl3kYwgWw==
+
+"@react-spring/web@^9.7.3":
+  version "9.7.3"
+  resolved "https://registry.yarnpkg.com/@react-spring/web/-/web-9.7.3.tgz#d9f4e17fec259f1d65495a19502ada4f5b57fa3d"
+  integrity sha512-BXt6BpS9aJL/QdVqEIX9YoUy8CE6TJrU0mNCqSoxdXlIeNcEBWOfIyE6B14ENNsyQKS3wOWkiJfco0tCr/9tUg==
+  dependencies:
+    "@react-spring/animated" "~9.7.3"
+    "@react-spring/core" "~9.7.3"
+    "@react-spring/shared" "~9.7.3"
+    "@react-spring/types" "~9.7.3"
 
 "@remix-run/router@1.14.2":
   version "1.14.2"
@@ -3089,9 +3140,9 @@
     "@types/node" "*"
 
 "@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
-  version "20.11.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.13.tgz#188263ee2c8d590e181d3f5bfa7e485a932957cb"
-  integrity sha512-5G4zQwdiQBSWYTDAH1ctw2eidqdhMJaNsiIDKHFr55ihz5Trl2qqR8fdrT732yPBho5gkNxXm67OxWFBqX9aPg==
+  version "20.11.14"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.14.tgz#9fdc9c2550c2f6693508ca4530f821474c4ee3bb"
+  integrity sha512-w3yWCcwULefjP9DmDDsgUskrMoOy5Z8MiwKHr1FvqGPtx7CvJzQvxD7eKpxNtklQxLruxSXWddyeRtyud0RcXQ==
   dependencies:
     undici-types "~5.26.4"
 
@@ -5374,9 +5425,9 @@ ejs@^3.1.6:
     jake "^10.8.5"
 
 electron-to-chromium@^1.4.648:
-  version "1.4.651"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.651.tgz#ef1e822233c6fc953df3caf943f78c21b254a080"
-  integrity sha512-jjks7Xx+4I7dslwsbaFocSwqBbGHQmuXBJUK9QBZTIrzPq3pzn6Uf2szFSP728FtLYE3ldiccmlkOM/zhGKCpA==
+  version "1.4.652"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.652.tgz#1591c7542d43c990de786374c07a9d6ad2b63787"
+  integrity sha512-XvQaa8hVUAuEJtLw6VKQqvdOxTOfBLWfI10t2xWpezx4XXD3k8bdLweEKeItqaa0+OkJX5l0mP1W+JWobyIDrg==
 
 emittery@^0.10.2:
   version "0.10.2"
@@ -13030,9 +13081,9 @@ vfile@^6.0.0:
     vfile-message "^4.0.0"
 
 victory-vendor@^36.6.8:
-  version "36.8.4"
-  resolved "https://registry.yarnpkg.com/victory-vendor/-/victory-vendor-36.8.4.tgz#63a5bb04934cf9fecf8c5e43c04a4a1242f306c2"
-  integrity sha512-30dOGZVjrOraxzflyZozjwYBYnIjhX2c18kuVNiiZlRHx++8zXGptlXSAm57M87Y2WLN10XGbn8kTXntqteKUw==
+  version "36.8.5"
+  resolved "https://registry.yarnpkg.com/victory-vendor/-/victory-vendor-36.8.5.tgz#5432b52953fc9dc956a1ca310fa71839693677ed"
+  integrity sha512-gqLYO8pqI0bEEB/MygK/A9ZyMflvhMTYr3mymH0I9dv2OFUGNgY0ZqGZ7KJ/Trmyg/3D7DG3Hx0SYvD2emQ4EQ==
   dependencies:
     "@types/d3-array" "^3.0.3"
     "@types/d3-ease" "^3.0.0"
